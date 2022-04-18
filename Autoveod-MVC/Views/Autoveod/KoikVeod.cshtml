@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Autoveod_MVC.Models.Autovedu>
+
+@{
+    ViewData["Title"] = "Koik Veod";
+}
+
+<h1>Kõik Veod</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tellija)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alguspunkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lõpppunkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KohalejoudmiseAeg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AutoNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JuhtEesnimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JuhtPerenimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valmis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tellija)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Alguspunkt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lõpppunkt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KohalejoudmiseAeg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AutoNr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JuhtEesnimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JuhtPerenimi)
+                </td>
+                <td>
+                    @if (!item.Valmis)
+                    {
+                        <p style="color: red;">Ei ole valmis</p>
+                    }
+                    else
+                    {
+                        <p style="color: green;">On valmis</p>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Muuda" asp-route-id="@item.Id">Muuda</a> |
+                    <a asp-action="Kustuta" asp-route-id="@item.Id">Kustuta</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

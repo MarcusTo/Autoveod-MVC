@@ -1,0 +1,48 @@
+﻿@model Autoveod_MVC.Models.Autovedu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Telli</h1>
+
+<h4>Autovedu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Telli">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tellija" class="control-label"></label>
+                <input asp-for="Tellija" class="form-control" />
+                <span asp-validation-for="Tellija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alguspunkt" class="control-label"></label>
+                <input asp-for="Alguspunkt" class="form-control" />
+                <span asp-validation-for="Alguspunkt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lõpppunkt" class="control-label"></label>
+                <input asp-for="Lõpppunkt" class="form-control" />
+                <span asp-validation-for="Lõpppunkt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KohalejoudmiseAeg" class="control-label"></label>
+                <input type="date" asp-for="KohalejoudmiseAeg" class="form-control" />
+                <span asp-validation-for="KohalejoudmiseAeg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Telli" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Tagasi</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,69 @@
+﻿@model Autoveod_MVC.Models.Autovedu
+
+@{
+    ViewData["Title"] = "Muuda";
+}
+
+<h1>Muuda</h1>
+
+<h4>Autovedu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Muuda">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Tellija" class="control-label"></label>
+                <input asp-for="Tellija" class="form-control" />
+                <span asp-validation-for="Tellija" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alguspunkt" class="control-label"></label>
+                <input asp-for="Alguspunkt" class="form-control" />
+                <span asp-validation-for="Alguspunkt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lõpppunkt" class="control-label"></label>
+                <input asp-for="Lõpppunkt" class="form-control" />
+                <span asp-validation-for="Lõpppunkt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KohalejoudmiseAeg" class="control-label"></label>
+                <input type="date" asp-for="KohalejoudmiseAeg" class="form-control" />
+                <span asp-validation-for="KohalejoudmiseAeg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoNr" class="control-label"></label>
+                <input asp-for="AutoNr" class="form-control" />
+                <span asp-validation-for="AutoNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JuhtEesnimi" class="control-label"></label>
+                <input asp-for="JuhtEesnimi" class="form-control" />
+                <span asp-validation-for="JuhtEesnimi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JuhtPerenimi" class="control-label"></label>
+                <input asp-for="JuhtPerenimi" class="form-control" />
+                <span asp-validation-for="JuhtPerenimi" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Valmis" /> @Html.DisplayNameFor(model => model.Valmis)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="KoikVeod">Tagasi</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
