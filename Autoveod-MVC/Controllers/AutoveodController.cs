@@ -165,8 +165,24 @@ namespace Autoveod_MVC.Controllers
             {
                 _context.Add(autovedu);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("KoikVeod");
+               return RedirectToAction("Detail", new { id = autovedu.Id});
             }
+            return View(autovedu);
+        }
+        public async Task<IActionResult> Detail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var autovedu = await _context.Autoveod
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (autovedu == null)
+            {
+                return NotFound();
+            }
+
             return View(autovedu);
         }
 

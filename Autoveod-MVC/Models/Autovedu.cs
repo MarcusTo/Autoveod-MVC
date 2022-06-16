@@ -13,7 +13,7 @@ namespace Autoveod_MVC.Models
         [Required]
         public string Lõpppunkt { get; set; }
         [Required]
-        [Display(Name = "Kohale Joudmise Aeg")]
+        [Display(Name = "Lasti pealevõtmise kuupäev ")]
         public DateTime KohalejoudmiseAeg { get; set; }
         [Display(Name = "Auto Number")]
         public string AutoNr { get; set; }

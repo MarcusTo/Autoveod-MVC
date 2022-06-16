@@ -1,63 +1,61 @@
 ﻿@model Autoveod_MVC.Models.Autovedu
 
 @{
-    ViewData["Title"] = "Kustuta";
+    ViewData["Title"] = "Detail";
 }
 
-<h1>Kustuta</h1>
 
-<h3>Kas olete kindel, et soovite kustutada?</h3>
+<h3></h3>
 <div>
-    <h4>Autovedu</h4>
+    <h4>Veo detailid</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Tellija)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Tellija)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Alguspunkt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Alguspunkt)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Lõpppunkt)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Lõpppunkt)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.KohalejoudmiseAeg)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.KohalejoudmiseAeg)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.AutoNr)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.AutoNr)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JuhtEesnimi)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JuhtEesnimi)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JuhtPerenimi)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JuhtPerenimi)
-        </dd>  
+        </dd>
     </dl>
-    
-    <form asp-action="Kustuta">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="KoikVeod">Tagasi</a>
+
+    <form asp-action="Detail">
+        <input type="hidden" asp-for="Id" />|
+        <a asp-action="Telli">Tagasi</a>
     </form>
 </div>
