@@ -4,7 +4,7 @@
     ViewData["Title"] = "Koik Veod";
 }
 
-@*<h1>Lõpetamata veod(admin)</h1>*@
+<h1>Lõpetamata veod(admin)</h1>
 
 <table class="table">
     <thead>
@@ -61,12 +61,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.JuhtPerenimi)
                 </td>
-                @*<td>
+                <td>
                     <a asp-action="LopetaVedu" asp-route-id="@item.Id" style="color: red;">Märgi Valmis</a>
                 </td>
                 <td>
                     <a asp-action="Kustuta" asp-route-id="@item.Id">Kustuta</a>
-                </td>*@
+                </td>
             </tr>
         }
     </tbody>
