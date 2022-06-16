@@ -169,22 +169,22 @@ namespace Autoveod_MVC.Controllers
             }
             return View(autovedu);
         }
-        public async Task<IActionResult> Detail(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Detail(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var autovedu = await _context.Autoveod
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (autovedu == null)
-            {
-                return NotFound();
-            }
+        //    var autovedu = await _context.Autoveod
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (autovedu == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(autovedu);
-        }
+        //    return View(autovedu);
+        //}
 
         // GET: Autoveod/Edit/5
         public async Task<IActionResult> Muuda(int? id)
